@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HJI Carte+ Dashboard | Cartesian Kinetics</title>
+    <title>HJI Carte+ Dashboard | Cartesian Kinetics</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,7 +32,7 @@
                         Customer Dashboard <span class="text-[#209d74]">/</span> CARTE+
                     </h1>
                     <p class="text-[11px] text-slate-600 flex items-center gap-1 mt-0.5">
-                        <i class="fa-solid fa-location-dot text-[#209d74]"></i> Region: America/Kentucky/Louisville
+                        <i class="fa-solid fa-location-dot text-[#209d74]"></i> Region: America/Kentucky/Louisville Lock
                     </p>
                 </div>
             </div>
@@ -74,12 +74,13 @@
                 </div>
             </div>
 
-            <div class="space-y-2">
+            <div class="space-y-4 bg-[#111a17]/20 border border-[#1d2c27]/40 p-4 rounded-xl">
                 <div class="flex items-center gap-2 text-xs text-[#7da6a6] pl-1">
                     <i class="fa-solid fa-circle-dot text-[#ffc107] animate-pulse"></i>
                     <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Open To Pick</span>
                     <span class="text-[#5e6b66]">(Real-Time Queue Data Summary)</span>
                 </div>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
@@ -104,6 +105,25 @@
                             <p class="text-[10px] text-[#5e6b66] mt-0.5">Summed inventory demand</p>
                         </div>
                         <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-cubes text-xl"></i></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-[#1d2c27]/60 pt-3">
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#209d74]/30 flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Inward Orders</p>
+                            <h3 id="p-inward-orders" class="text-2xl font-black text-[#209d74] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Awaiting physical receiving deck</p>
+                        </div>
+                        <div class="bg-[#0c221a] text-[#209d74] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-boxes-arrow-into-box text-lg"></i></div>
+                    </div>
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#209d74]/30 flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Inward Qty</p>
+                            <h3 id="p-inward-qty" class="text-2xl font-black text-[#209d74] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Summed inbound SKU item count</p>
+                        </div>
+                        <div class="bg-[#0c221a] text-[#209d74] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-pallet text-lg"></i></div>
                     </div>
                 </div>
             </div>
@@ -172,7 +192,7 @@
 
                     <div class="w-full xl:w-80 bg-[#111a17] border border-[#ffc107]/20 p-4 rounded-xl space-y-3 shadow-md">
                         <div class="text-[10px] uppercase font-black tracking-widest text-[#ffc107] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-calculator"></i> Inventory Audits
+                            <i class="fa-solid fa-calculator"></i> Cycle Count
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
@@ -259,21 +279,21 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
                                 <div>
-                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Orders</p>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Total Orders</p>
                                     <h3 id="macro-total-orders" class="text-xl font-black text-white mt-0.5">0</h3>
                                 </div>
                                 <div class="text-[#4fb0c2] opacity-80"><i class="fa-solid fa-boxes-stacked text-md"></i></div>
                             </div>
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
                                 <div>
-                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Lines</p>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Total Lines</p>
                                     <h3 id="macro-total-lines" class="text-xl font-black text-white mt-0.5">0</h3>
                                 </div>
                                 <div class="text-[#7da6a6] opacity-80"><i class="fa-solid fa-barcode text-md"></i></div>
                             </div>
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
                                 <div>
-                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Picks</p>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Total Picks</p>
                                     <h3 id="macro-total-picks" class="text-xl font-black text-white mt-0.5">0</h3>
                                 </div>
                                 <div class="text-[#209d74] opacity-80"><i class="fa-solid fa-hand-holding-box text-md"></i></div>
@@ -283,7 +303,7 @@
 
                     <div class="w-full xl:w-80 bg-[#111a17] border border-[#209d74]/30 p-4 rounded-xl space-y-3 shadow-md">
                         <div class="text-[10px] uppercase font-black tracking-widest text-[#209d74] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-arrow-down-to-square"></i> Inbound Receiving
+                            <i class="fa-solid fa-arrow-down-to-square"></i> Inward Receiving
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
@@ -359,9 +379,9 @@
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
         let chartInstances = {};
 
-        const COLOR_PRIMARY = "#209D74";   
-        const COLOR_SECONDARY = "#7DA6A6"; 
-        const COLOR_TERTIARY = "#4FB0C2";  
+        const COLOR_PRIMARY = "#FF5252";   
+        const COLOR_SECONDARY = "#00E676"; 
+        const COLOR_TERTIARY = "#38BDF8";  
         const COLOR_BORDER = "#1d2c27";    
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -421,10 +441,13 @@
                 }
             }
 
-            const live = data.livePending || { pendingOrders: 0, pendingLines: 0, pendingUnits: 0 };
-            document.getElementById('p-orders').innerText = live.pendingOrders.toLocaleString();
-            document.getElementById('p-lines').innerText = live.pendingLines.toLocaleString();
-            document.getElementById('p-units').innerText = live.pendingUnits.toLocaleString();
+            // POPULATE LIVE EXPANDED PENDING VALUES
+            const live = data.livePending || { pendingOrders: 0, pendingLines: 0, pendingUnits: 0, pendingInwardOrders: 0, pendingInwardQty: 0 };
+            document.getElementById('p-orders').innerText = (live.pendingOrders || 0).toLocaleString();
+            document.getElementById('p-lines').innerText = (live.pendingLines || 0).toLocaleString();
+            document.getElementById('p-units').innerText = (live.pendingUnits || 0).toLocaleString();
+            document.getElementById('p-inward-orders').innerText = (live.pendingInwardOrders || 0).toLocaleString();
+            document.getElementById('p-inward-qty').innerText = (live.pendingInwardQty || 0).toLocaleString();
 
             const sd = data.singleDayWorkspace.totals || { orders: 0, lines: 0, picks: 0, hours: 0, inwardTotes: 0, inwardQty: 0, ccTotes: 0, ccCorrections: 0 };
             document.getElementById('m-orders').innerText = sd.orders.toLocaleString();
@@ -553,7 +576,6 @@
             });
         }
 
-        if (typeof data === 'undefined') { var data = { macroWorkspace: { averagesChart: [] } }; }
         function buildChartHistoricalAverages(averagesChart) {
             clearChartInstance('historicalAverages');
             const ctx = document.getElementById('chart-historical-averages').getContext('2d');
