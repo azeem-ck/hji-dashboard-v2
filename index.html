@@ -65,7 +65,7 @@
                     </div>
                     <div>
                         <h2 class="text-xs font-black tracking-widest text-[#e7ebea] uppercase">Single-Day Focus Workspace</h2>
-                        <p class="text-[11px] text-[#7da6a6]">Operational telemetry profiles for targeted performance windows</p>
+                        <p class="text-[11px] text-[#7da6a6]">Carte+ Metrics for the selected day</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-2 text-xs">
@@ -77,7 +77,7 @@
             <div class="space-y-4 bg-[#111a17]/20 border border-[#1d2c27]/40 p-4 rounded-xl">
                 <div class="flex items-center gap-2 text-xs text-[#7da6a6] pl-1">
                     <i class="fa-solid fa-circle-dot text-[#ffc107] animate-pulse"></i>
-                    <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Open To Pick</span>
+                    <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Pending Tasks</span>
                     <span class="text-[#5e6b66]">(Real-Time Queue Data Summary)</span>
                 </div>
                 
@@ -102,7 +102,7 @@
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Units</p>
                             <h3 id="p-units" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Summed inventory demand</p>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Across all orders</p>
                         </div>
                         <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-cubes text-xl"></i></div>
                     </div>
@@ -112,18 +112,18 @@
                     <div class="bg-[#111a17] p-4 rounded-xl border border-[#209d74]/30 flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Inward Orders</p>
-                            <h3 id="p-inward-orders" class="text-2xl font-black text-[#209d74] tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Awaiting physical receiving deck</p>
+                            <h3 id="p-inward-orders" class="text-2xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Awaiting in the staging area</p>
                         </div>
-                        <div class="bg-[#0c221a] text-[#209d74] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-boxes-arrow-into-box text-lg"></i></div>
+                        <div class="bg-[#0c221a] text-[#ffc107] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-boxes-arrow-into-box text-lg"></i></div>
                     </div>
                     <div class="bg-[#111a17] p-4 rounded-xl border border-[#209d74]/30 flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Inward Qty</p>
-                            <h3 id="p-inward-qty" class="text-2xl font-black text-[#209d74] tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Summed inward SKU item count</p>
+                            <h3 id="p-inward-qty" class="text-2xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Net inward item count across totes</p>
                         </div>
-                        <div class="bg-[#0c221a] text-[#209d74] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-pallet text-lg"></i></div>
+                        <div class="bg-[#0c221a] text-[#ffc107] p-2.5 rounded-lg border border-[#163a2d]"><i class="fa-solid fa-pallet text-lg"></i></div>
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@
                 <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Throughput (UPH)</h4>
-                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Units picked sequentially by execution duration inside hour blocks</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Throughput measured based on actual run time within each hour window</p>
                     </div>
                     <div class="relative h-72 w-full">
                         <canvas id="chart-hourly-rates"></canvas>
@@ -246,7 +246,7 @@
                     </div>
                     <div>
                         <h2 class="text-xs font-black tracking-widest text-[#e7ebea] uppercase">Macro Trend Exploration Workspace</h2>
-                        <p class="text-[11px] text-[#7da6a6]">Historical scaling curves and running averages velocity engine</p>
+                        <p class="text-[11px] text-[#7da6a6]">Historical metrics and past average througputs</p>
                     </div>
                 </div>
                 <div class="flex flex-wrap items-center gap-3 text-xs">
@@ -350,8 +350,8 @@
             <div class="flex flex-col gap-6">
                 <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
-                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Macro Progression (Historical Baseline)</h4>
-                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Comparative visual timeline tracking volumes across daily scaling history</p>
+                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Fulfillment History</h4>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Compare fulfillment metrics across days</p>
                     </div>
                     <div class="relative h-72 w-full">
                         <canvas id="chart-macro-progression"></canvas>
@@ -360,7 +360,7 @@
                 <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Historical Average Throughput</h4>
-                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Average running velocity outputs computed for each calendar ledger record</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Average Units Per Hour (UPH) across all fulfillments on each day</p>
                     </div>
                     <div class="relative h-72 w-full">
                         <canvas id="chart-historical-averages"></canvas>
@@ -379,9 +379,9 @@
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
         let chartInstances = {};
 
-        const COLOR_PRIMARY = "#FF5252";   
-        const COLOR_SECONDARY = "#00E676"; 
-        const COLOR_TERTIARY = "#38BDF8";  
+        const COLOR_PRIMARY = "#52C79F";   
+        const COLOR_SECONDARY = "#9BBFBF"; 
+        const COLOR_TERTIARY = "#72C6D6";  
         const COLOR_BORDER = "#1d2c27";    
 
         document.addEventListener("DOMContentLoaded", () => {
