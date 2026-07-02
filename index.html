@@ -116,10 +116,9 @@
                 </div>
                 
                 <div class="flex flex-col gap-4 xl:flex-row xl:items-stretch">
-                    
                     <div class="flex-1 bg-[#111a17] border border-[#1d2c27] p-4 rounded-xl space-y-3 shadow-md">
                         <div class="text-[10px] uppercase font-black tracking-widest text-[#4fb0c2] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-box-open"></i> Fulfillment Performance [cite: 1]
+                            <i class="fa-solid fa-box-open"></i> Fulfillment Performance
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
@@ -151,7 +150,7 @@
 
                     <div class="w-full xl:w-80 bg-[#111a17] border border-[#209d74]/30 p-4 rounded-xl space-y-3 shadow-md">
                         <div class="text-[10px] uppercase font-black tracking-widest text-[#209d74] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-arrow-down-to-square"></i> Inbound Receiving [cite: 1]
+                            <i class="fa-solid fa-arrow-down-to-square"></i> Inbound Receiving
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
@@ -173,7 +172,7 @@
 
                     <div class="w-full xl:w-80 bg-[#111a17] border border-[#ffc107]/20 p-4 rounded-xl space-y-3 shadow-md">
                         <div class="text-[10px] uppercase font-black tracking-widest text-[#ffc107] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-calculator"></i> Inventory Audits [cite: 1]
+                            <i class="fa-solid fa-calculator"></i> Inventory Audits
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
@@ -192,7 +191,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -253,57 +251,78 @@
                     <span class="text-[#5e6b66]">(Summed workspace performance metrics for selected window)</span>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Total Orders</p>
-                            <h3 id="macro-total-orders" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                <div class="flex flex-col gap-4 xl:flex-row xl:items-stretch">
+                    <div class="flex-1 bg-[#111a17] border border-[#1d2c27] p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#4fb0c2] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-box-open"></i> Fulfillment Performance
                         </div>
-                        <div class="text-[#4fb0c2] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-boxes-stacked text-md"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Total Lines</p>
-                            <h3 id="macro-total-lines" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Orders</p>
+                                    <h3 id="macro-total-orders" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-80"><i class="fa-solid fa-boxes-stacked text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Lines</p>
+                                    <h3 id="macro-total-lines" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#7da6a6] opacity-80"><i class="fa-solid fa-barcode text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Total Picks</p>
+                                    <h3 id="macro-total-picks" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#209d74] opacity-80"><i class="fa-solid fa-hand-holding-box text-md"></i></div>
+                            </div>
                         </div>
-                        <div class="text-[#7da6a6] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-barcode text-md"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Total Picks</p>
-                            <h3 id="macro-total-picks" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
-                        </div>
-                        <div class="text-[#209d74] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-hand-holding-box text-md"></i></div>
-                    </div>
-
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Totes Inwarded</p>
-                            <h3 id="macro-total-inward-totes" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
-                        </div>
-                        <div class="text-[#4fb0c2] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-arrow-down-to-square text-md"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Qty Inwarded</p>
-                            <h3 id="macro-total-inward-qty" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
-                        </div>
-                        <div class="text-[#4fb0c2] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-pallet text-md"></i></div>
                     </div>
 
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Totes Counted</p>
-                            <h3 id="macro-total-cc-totes" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                    <div class="w-full xl:w-80 bg-[#111a17] border border-[#209d74]/30 p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#209d74] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-arrow-down-to-square"></i> Inbound Receiving
                         </div>
-                        <div class="text-[#7da6a6] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-clipboard-check text-md"></i></div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Totes Inward</p>
+                                    <h3 id="macro-total-inward-totes" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-75"><i class="fa-solid fa-arrow-down-to-square text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Qty Inwarded</p>
+                                    <h3 id="macro-total-inward-qty" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-75"><i class="fa-solid fa-pallet text-md"></i></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Corrections</p>
-                            <h3 id="macro-total-cc-corrections" class="text-2xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+
+                    <div class="w-full xl:w-80 bg-[#111a17] border border-[#ffc107]/20 p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#ffc107] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-calculator"></i> Inventory Audits
                         </div>
-                        <div class="text-[#ffc107] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-wrench text-md"></i></div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Totes Counted</p>
+                                    <h3 id="macro-total-cc-totes" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#7da6a6] opacity-75"><i class="fa-solid fa-clipboard-check text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Range Corrections</p>
+                                    <h3 id="macro-total-cc-corrections" class="text-xl font-black text-[#ffc107] mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#ffc107] opacity-75"><i class="fa-solid fa-wrench text-md"></i></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,11 +359,10 @@
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
         let chartInstances = {};
 
-        // Brand Theme Colors Config Constants Map
-        const COLOR_PRIMARY = "#209D74";   // Teal Accord Accent
-        const COLOR_SECONDARY = "#7DA6A6"; // Muted Desaturated Mint‑Teal
-        const COLOR_TERTIARY = "#4FB0C2";  // Blue-Teal Info Highlighting
-        const COLOR_BORDER = "#1d2c27";    // Strict Ledger Line Separation Grid
+        const COLOR_PRIMARY = "#209D74";   
+        const COLOR_SECONDARY = "#7DA6A6"; 
+        const COLOR_TERTIARY = "#4FB0C2";  
+        const COLOR_BORDER = "#1d2c27";    
 
         document.addEventListener("DOMContentLoaded", () => {
             initializeMacroBounds();
@@ -413,7 +431,6 @@
             document.getElementById('m-lines').innerText = sd.lines.toLocaleString();
             document.getElementById('m-picks').innerText = sd.picks.toLocaleString();
             
-            // Populate single day inventory operation targets
             document.getElementById('m-inward-totes').innerText = (sd.inwardTotes || 0).toLocaleString();
             document.getElementById('m-inward-qty').innerText = (sd.inwardQty || 0).toLocaleString();
             document.getElementById('m-cc-totes').innerText = (sd.ccTotes || 0).toLocaleString();
@@ -424,7 +441,6 @@
             document.getElementById('t-lines').innerText = `${singleHours > 0 ? (sd.lines / singleHours).toFixed(1) : "0.0"} / hr`;
             document.getElementById('t-picks').innerText = `${singleHours > 0 ? (sd.picks / singleHours).toFixed(1) : "0.0"} / hr`;
 
-            // DYNAMIC CALCULATION AND POPULATION FOR MACRO WORKSPACE RANGE AGGREGATIONS
             const trendData = data.macroWorkspace.trendChart || [];
             let aggregateOrders = 0;
             let aggregateLines = 0;
@@ -462,8 +478,6 @@
             if (chartInstances[id]) { chartInstances[id].destroy(); }
         }
 
-        // --- PRODUCTION GRAPHICS CHART SUITE ENGINE ---
-
         function buildChartHourlyRates(hourlyTimeline) {
             clearChartInstance('hourlyRates');
             const ctx = document.getElementById('chart-hourly-rates').getContext('2d');
@@ -487,7 +501,6 @@
             });
         }
 
-        // DUAL Y-AXIS CHART FOR SCALING EFFICIENCY
         function buildChartHourlyCounts(hourlyTimeline) {
             clearChartInstance('hourlyCounts');
             const ctx = document.getElementById('chart-hourly-counts').getContext('2d');
@@ -540,6 +553,7 @@
             });
         }
 
+        if (typeof data === 'undefined') { var data = { macroWorkspace: { averagesChart: [] } }; }
         function buildChartHistoricalAverages(averagesChart) {
             clearChartInstance('historicalAverages');
             const ctx = document.getElementById('chart-historical-averages').getContext('2d');
