@@ -3,132 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte+ Logistics Center</title>
+    <title>Carte+ Logistics Center | Cartesian Kinetics</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar matching brand theme */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #090e0c; }
+        ::-webkit-scrollbar-thumb { background: #1d2c27; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #209d74; }
+    </style>
 </head>
-<body class="bg-[#0b0f19] text-slate-100 font-sans antialiased min-h-screen">
+<body class="bg-[#090e0c] text-[#e7ebea] font-sans antialiased min-h-screen">
 
-    <header class="bg-[#111827] border-b border-slate-800/60 sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="bg-blue-600 text-white p-2 rounded-lg shadow-inner">
-                    <i class="fa-solid fa-square-poll-horizontal text-lg"></i>
+    <header class="bg-[#111a17] border-b border-[#1d2c27] sticky top-0 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center p-1 bg-[#090e0c]/50 rounded-lg border border-[#1d2c27]">
+                    <img src="https://cartesiankinetics.com/wp-content/uploads/2025/06/logo-org.png" 
+                         alt="Cartesian Kinetics Logo" 
+                         class="h-10 w-auto object-contain px-1">
                 </div>
+                <div class="hidden sm:block border-l border-[#1d2c27] h-8"></div>
                 <div>
-                    <h1 class="text-base font-black tracking-wider text-white uppercase">LocusView Daily / Carte+</h1>
-                    <p class="text-[11px] text-slate-400 flex items-center gap-1">
-                        <i class="fa-solid fa-location-dot text-blue-500"></i> Region: America/Kentucky/Louisville Lock
+                    <h1 class="text-sm font-black tracking-widest text-white uppercase flex items-center gap-2">
+                        LocusView Daily <span class="text-[#209d74]">/</span> CARTE+
+                    </h1>
+                    <p class="text-[11px] text-[#7da6a6] flex items-center gap-1 mt-0.5">
+                        <i class="fa-solid fa-location-dot text-[#209d74]"></i> Region: America/Kentucky/Louisville Lock
                     </p>
                 </div>
             </div>
-            <div class="text-right">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-blue-950 text-blue-400 border border-blue-900/50">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                    Live Hybrid Engine Active
-                </span>
-                <p id="engine-sync-time" class="text-[10px] text-slate-500 font-mono mt-1">Engine Sync Time: --:--:--</p>
+            
+            <div class="flex items-center gap-5 text-right">
+                <div class="hidden md:flex flex-col justify-center items-end border-r border-[#1d2c27] pr-5 h-10">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-[#7da6a6] mb-1">Operational Partner</span>
+                    <img src="https://hjisolutions.com/wp-content/uploads/2026/02/HJI-footer-logo.png" 
+                         alt="HJI Solutions Logo" 
+                         class="h-6 w-auto object-contain brightness-110">
+                </div>
+                <div>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-[#0c221a] text-[#209d74] border border-[#163a2d]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#209d74] animate-pulse"></span>
+                        Live Hybrid Engine Active
+                    </span>
+                    <p id="engine-sync-time" class="text-[10px] text-[#7da6a6] font-mono mt-1">Engine Sync Time: --:--:--</p>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
         <section class="space-y-4">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#111827] p-4 rounded-xl border border-slate-800/60 shadow-sm">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-day text-blue-500"></i>
-                    <h2 class="text-sm font-black tracking-wider text-slate-300 uppercase">Single-Day Focus Workspace</h2>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] shadow-md">
+                <div class="flex items-center gap-2.5">
+                    <div class="bg-[#090e0c] text-[#209d74] p-2 rounded-lg border border-[#1d2c27] shadow-inner">
+                        <i class="fa-solid fa-calendar-day text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-black tracking-widest text-[#e7ebea] uppercase">Single-Day Focus Workspace</h2>
+                        <p class="text-[11px] text-[#7da6a6]">Operational telemetry profiles for targeted performance windows</p>
+                    </div>
                 </div>
                 <div class="flex items-center gap-2 text-xs">
-                    <label for="single-date" class="font-bold text-slate-400">Target Day Focus:</label>
-                    <input type="date" id="single-date" onchange="refreshDashboardData()" class="bg-[#0b0f19] border border-slate-800 rounded-lg px-3 py-1.5 text-slate-200 font-mono focus:ring-1 focus:ring-blue-500 focus:outline-hidden">
+                    <label for="single-date" class="font-bold text-[#7da6a6]">Target Day Focus:</label>
+                    <input type="date" id="single-date" onchange="refreshDashboardData()" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-3 py-1.5 text-white font-mono focus:ring-1 focus:ring-[#209d74] focus:outline-hidden">
                 </div>
             </div>
 
             <div class="space-y-2">
-                <div class="flex items-center gap-2 text-xs text-slate-400 pl-1">
-                    <i class="fa-solid fa-circle-dot text-amber-500 animate-pulse"></i>
-                    <span class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Open To Pick</span>
-                    <span class="text-slate-500">(Real-Time Queue Data Summary)</span>
+                <div class="flex items-center gap-2 text-xs text-[#7da6a6] pl-1">
+                    <i class="fa-solid fa-circle-dot text-[#ffc107] animate-pulse"></i>
+                    <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Open To Pick</span>
+                    <span class="text-[#5e6b66]">(Real-Time Queue Data Summary)</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Total Pending Orders</p>
-                            <h3 id="p-orders" class="text-3xl font-black text-amber-400 tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-slate-500 mt-0.5">Active non-cancelled queue</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Orders</p>
+                            <h3 id="p-orders" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Active non-cancelled queue</p>
                         </div>
-                        <div class="bg-amber-950/40 text-amber-500 p-3 rounded-lg border border-amber-900/30"><i class="fa-solid fa-folder text-xl"></i></div>
+                        <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-folder text-xl"></i></div>
                     </div>
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Total Pending Lines</p>
-                            <h3 id="p-lines" class="text-3xl font-black text-amber-400 tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-slate-500 mt-0.5">Excludes external item lines</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Lines</p>
+                            <h3 id="p-lines" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Excludes external item lines</p>
                         </div>
-                        <div class="bg-amber-950/40 text-amber-500 p-3 rounded-lg border border-amber-900/30"><i class="fa-solid fa-list-ul text-xl"></i></div>
+                        <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-list-ul text-xl"></i></div>
                     </div>
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Total Pending Units</p>
-                            <h3 id="p-units" class="text-3xl font-black text-amber-400 tracking-tight mt-1">0</h3>
-                            <p class="text-[10px] text-slate-500 mt-0.5">Summed inventory demand</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Total Pending Units</p>
+                            <h3 id="p-units" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                            <p class="text-[10px] text-[#5e6b66] mt-0.5">Summed inventory demand</p>
                         </div>
-                        <div class="bg-amber-950/40 text-amber-500 p-3 rounded-lg border border-amber-900/30"><i class="fa-solid fa-cubes text-xl"></i></div>
+                        <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-cubes text-xl"></i></div>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-2 pt-2">
-                <div class="flex items-center gap-2 text-xs text-slate-400 pl-1">
-                    <i class="fa-solid fa-database text-blue-500"></i>
-                    <span class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Today Totals</span>
-                    <span id="target-date-label" class="text-slate-500 text-xs font-mono">(--)</span>
+                <div class="flex items-center gap-2 text-xs text-[#7da6a6] pl-1">
+                    <i class="fa-solid fa-database text-[#209d74]"></i>
+                    <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Today Totals</span>
+                    <span id="target-date-label" class="text-[#7da6a6] text-xs font-mono">(--)</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Orders Fulfilled</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Orders Fulfilled</p>
                             <h3 id="m-orders" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-orders" class="text-[11px] text-blue-400 font-mono font-bold mt-1 bg-slate-950 px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <p id="t-orders" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-slate-950 text-blue-500 p-3 rounded-lg border border-slate-800"><i class="fa-solid fa-box text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#4fb0c2] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-box text-xl"></i></div>
                     </div>
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Lines Processed</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Lines Processed</p>
                             <h3 id="m-lines" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-lines" class="text-[11px] text-blue-400 font-mono font-bold mt-1 bg-slate-950 px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <p id="t-lines" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-slate-950 text-indigo-500 p-3 rounded-lg border border-slate-800"><i class="fa-solid fa-receipt text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#7da6a6] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-receipt text-xl"></i></div>
                     </div>
-                    <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/70 flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Quantity Picked</p>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Quantity Picked</p>
                             <h3 id="m-picks" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-picks" class="text-[11px] text-blue-400 font-mono font-bold mt-1 bg-slate-950 px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <p id="t-picks" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-slate-950 text-purple-500 p-3 rounded-lg border border-slate-800"><i class="fa-solid fa-dolly text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#209d74] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-dolly text-xl"></i></div>
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
-                <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/60 space-y-4 shadow-xs">
+                <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Metrics (UPH Today)</h4>
-                        <p class="text-[11px] text-slate-400 mt-0.5">Units and lines picked sequentially by execution duration inside hour blocks</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Units and lines picked sequentially by execution duration inside hour blocks</p>
                     </div>
                     <div class="relative h-64 w-full">
                         <canvas id="chart-hourly-rates"></canvas>
                     </div>
                 </div>
-                <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/60 space-y-4 shadow-xs">
+                <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Hourly Actual Counts</h4>
-                        <p class="text-[11px] text-slate-400 mt-0.5">Absolute operational counts processed within each chronological hour boundary</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Absolute operational counts processed within each chronological hour boundary</p>
                     </div>
                     <div class="relative h-64 w-full">
                         <canvas id="chart-hourly-counts"></canvas>
@@ -137,43 +164,48 @@
             </div>
         </section>
 
-        <div class="border-b border-slate-900"></div>
+        <div class="border-b border-[#131d1a]"></div>
 
         <section class="space-y-4">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-[#111827] p-4 rounded-xl border border-slate-800/60 shadow-sm">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-indigo-500"></i>
-                    <h2 class="text-sm font-black tracking-wider text-slate-300 uppercase">Macro Trend Exploration Workspace</h2>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] shadow-md">
+                <div class="flex items-center gap-2.5">
+                    <div class="bg-[#090e0c] text-[#209d74] p-2 rounded-lg border border-[#1d2c27] shadow-inner">
+                        <i class="fa-solid fa-chart-line text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-black tracking-widest text-[#e7ebea] uppercase">Macro Trend Exploration Workspace</h2>
+                        <p class="text-[11px] text-[#7da6a6]">Historical scaling curves and running averages velocity engine</p>
+                    </div>
                 </div>
                 <div class="flex flex-wrap items-center gap-3 text-xs">
                     <div class="flex items-center gap-2">
-                        <label for="macro-start" class="font-bold text-slate-400">From:</label>
-                        <input type="date" id="macro-start" class="bg-[#0b0f19] border border-slate-800 rounded-lg px-2 py-1 text-slate-200 font-mono focus:outline-hidden focus:ring-1 focus:ring-blue-500">
+                        <label for="macro-start" class="font-bold text-[#7da6a6]">From:</label>
+                        <input type="date" id="macro-start" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-2 py-1 text-white font-mono focus:outline-hidden focus:ring-1 focus:ring-[#209d74]">
                     </div>
                     <div class="flex items-center gap-2">
-                        <label for="macro-end" class="font-bold text-slate-400">To:</label>
-                        <input type="date" id="macro-end" class="bg-[#0b0f19] border border-slate-800 rounded-lg px-2 py-1 text-slate-200 font-mono focus:outline-hidden focus:ring-1 focus:ring-blue-500">
+                        <label for="macro-end" class="font-bold text-[#7da6a6]">To:</label>
+                        <input type="date" id="macro-end" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-2 py-1 text-white font-mono focus:outline-hidden focus:ring-1 focus:ring-[#209d74]">
                     </div>
-                    <button onclick="refreshDashboardData()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 py-1.5 rounded-lg cursor-pointer transition-colors shadow-xs">
+                    <button onclick="refreshDashboardData()" class="bg-[#209d74] hover:bg-[#1b8562] text-white font-black px-4 py-1.5 rounded-lg cursor-pointer transition-colors shadow-xs uppercase tracking-wider text-[11px]">
                         Apply Range Filter
                     </button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/60 space-y-4 shadow-xs">
+                <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Macro Progression (Historical Baseline)</h4>
-                        <p class="text-[11px] text-slate-400 mt-0.5">Comparative visual timeline tracking volumes across daily scaling history</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Comparative visual timeline tracking volumes across daily scaling history</p>
                     </div>
                     <div class="relative h-64 w-full">
                         <canvas id="chart-macro-progression"></canvas>
                     </div>
                 </div>
-                <div class="bg-[#111827] p-5 rounded-xl border border-slate-800/60 space-y-4 shadow-xs">
+                <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
                         <h4 class="text-xs font-black text-white tracking-wider uppercase">Historical Average Throughput</h4>
-                        <p class="text-[11px] text-slate-400 mt-0.5">Average running velocity outputs computed for each calendar ledger record</p>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Average running velocity outputs computed for each calendar ledger record</p>
                     </div>
                     <div class="relative h-64 w-full">
                         <canvas id="chart-historical-averages"></canvas>
@@ -184,15 +216,20 @@
 
     </main>
 
-    <footer class="max-w-7xl mx-auto px-4 text-center py-6 border-t border-slate-900 text-slate-600 text-[10px]">
-        * Pending metrics show a real-time snapshot of unfulfilled orders. Past performance logs update on an hourly trigger loop.
+    <footer class="max-w-7xl mx-auto px-4 text-center py-8 border-t border-[#131d1a] text-[#5e6b66] text-[10px] tracking-wide">
+        * Pending metrics show a real-time snapshot of unfulfilled orders. Past performance logs update on an hourly trigger loop matching Cartesian Kinetics WMS edge protocols.
     </footer>
 
     <script>
-        // Updated Web App Target Reference Endpoint
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
-        
         let chartInstances = {};
+
+        // Brand Theme Colors Config Constants Map
+        const COLOR_PRIMARY = "#209D74";   // Teal Accord Accent
+        const COLOR_SECONDARY = "#7DA6A6"; // Muted Desaturated Mint‑Teal
+        const COLOR_TERTIARY = "#4FB0C2";  // Blue-Teal Info Highlighting
+        const COLOR_BORDER = "#1d2c27";    // Strict Ledger Line Separation Grid
+        const COLOR_TEXT_MUTED = "#6b7974";
 
         document.addEventListener("DOMContentLoaded", () => {
             initializeDateBounds();
@@ -204,10 +241,8 @@
             const localDate = new Date(lsvTime);
             const formattedToday = localDate.toISOString().split('T')[0];
             
-            // Set Upper Single-Day Workspace Input Default Value
             document.getElementById('single-date').value = formattedToday;
 
-            // Set Lower Macro Workspace Range Bounds (Last 7 Days, Inclusive of Today)
             const pastDate = new Date(localDate);
             pastDate.setDate(localDate.getDate() - 6);
             document.getElementById('macro-start').value = pastDate.toISOString().split('T')[0];
@@ -222,13 +257,11 @@
             document.getElementById('target-date-label').innerText = `(${singleDate})`;
 
             try {
-                // Consolidated single-pass data fetch payload mapping
                 const queryUrl = `${API_BASE_URL}?singleDate=${singleDate}&start=${macroStart}&end=${macroEnd}`;
                 const response = await fetch(queryUrl);
                 const data = await response.json();
 
                 if (data.error) { console.error(data.error); return; }
-
                 renderWorkspaceComponents(data);
 
             } catch (err) {
@@ -239,13 +272,11 @@
         function renderWorkspaceComponents(data) {
             document.getElementById('engine-sync-time').innerText = `Engine Sync Time: ${data.lastRefreshed || 'N/A'}`;
 
-            // 1. Populate Live Pending Section
             const live = data.livePending || { pendingOrders: 0, pendingLines: 0, pendingUnits: 0 };
             document.getElementById('p-orders').innerText = live.pendingOrders.toLocaleString();
             document.getElementById('p-lines').innerText = live.pendingLines.toLocaleString();
             document.getElementById('p-units').innerText = live.pendingUnits.toLocaleString();
 
-            // 2. Populate Single-Day Production Summary Elements
             const sd = data.singleDayWorkspace.totals || { orders: 0, lines: 0, picks: 0, hours: 0 };
             document.getElementById('m-orders').innerText = sd.orders.toLocaleString();
             document.getElementById('m-lines').innerText = sd.lines.toLocaleString();
@@ -256,7 +287,6 @@
             document.getElementById('t-lines').innerText = `${singleHours > 0 ? (sd.lines / singleHours).toFixed(1) : "0.0"} / hr`;
             document.getElementById('t-picks').innerText = `${singleHours > 0 ? (sd.picks / singleHours).toFixed(1) : "0.0"} / hr`;
 
-            // 3. Render Independent Analytics Sub-Charts
             buildChartHourlyRates(data.singleDayWorkspace.hourlyTimeline);
             buildChartHourlyCounts(data.singleDayWorkspace.hourlyTimeline);
             buildChartMacroProgression(data.macroWorkspace.trendChart);
@@ -267,7 +297,7 @@
             if (chartInstances[id]) { chartInstances[id].destroy(); }
         }
 
-        // --- GRAPHICS RENDER CONTROLLER SUITE ---
+        // --- PRODUCTION GRAPHICS CHART SUITE ENGINE ---
 
         function buildChartHourlyRates(hourlyTimeline) {
             clearChartInstance('hourlyRates');
@@ -278,17 +308,17 @@
                 data: {
                     labels: hourlyTimeline.map(t => t.hour),
                     datasets: [
-                        { label: 'Lines Per Hour (LPH)', data: hourlyTimeline.map(t => t.lph), backgroundColor: '#6366f1', yAxisID: 'y' },
-                        { label: 'Units Per Hour (UPH)', data: hourlyTimeline.map(t => t.uph), backgroundColor: '#3b82f6', yAxisID: 'y1' }
+                        { label: 'Lines Per Hour (LPH)', data: hourlyTimeline.map(t => t.lph), backgroundColor: COLOR_SECONDARY, yAxisID: 'y' },
+                        { label: 'Units Per Hour (UPH)', data: hourlyTimeline.map(t => t.uph), backgroundColor: COLOR_PRIMARY, yAxisID: 'y1' }
                     ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10 } } } },
+                    plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
-                        x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'LPH', color: '#6366f1' }, ticks: { color: '#6366f1' }, grid: { color: '#1e293b' } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'UPH', color: '#3b82f6' }, ticks: { color: '#3b82f6' }, grid: { drawOnChartArea: false } }
+                        x: { ticks: { color: '#6b7974', font: { size: 9 } }, grid: { display: false } },
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'LPH', color: COLOR_SECONDARY }, ticks: { color: COLOR_SECONDARY }, grid: { color: COLOR_BORDER } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'UPH', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
                     }
                 }
             });
@@ -303,18 +333,18 @@
                 data: {
                     labels: hourlyTimeline.map(t => t.hour),
                     datasets: [
-                        { label: 'Orders', data: hourlyTimeline.map(t => t.orders), borderColor: '#10b981', backgroundColor: 'transparent', yAxisID: 'y', tension: 0.15 },
-                        { label: 'Lines', data: hourlyTimeline.map(t => t.lines), borderColor: '#ec4899', backgroundColor: 'transparent', yAxisID: 'y', tension: 0.15 },
-                        { label: 'Units (Picks)', data: hourlyTimeline.map(t => t.picks), borderColor: '#f59e0b', backgroundColor: 'rgba(245, 158, 11, 0.03)', fill: true, yAxisID: 'y1', tension: 0.15 }
+                        { label: 'Orders', data: hourlyTimeline.map(t => t.orders), borderColor: COLOR_TERTIARY, backgroundColor: 'transparent', yAxisID: 'y', tension: 0.15, borderWidth: 2 },
+                        { label: 'Lines', data: hourlyTimeline.map(t => t.lines), borderColor: COLOR_SECONDARY, backgroundColor: 'transparent', yAxisID: 'y', tension: 0.15, borderWidth: 2 },
+                        { label: 'Units (Picks)', data: hourlyTimeline.map(t => t.picks), borderColor: COLOR_PRIMARY, backgroundColor: 'rgba(32, 157, 116, 0.05)', fill: true, yAxisID: 'y1', tension: 0.15, borderWidth: 2.5 }
                     ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10 } } } },
+                    plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
-                        x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Orders & Lines', color: '#94a3b8' }, ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Units / Picks Count', color: '#f59e0b' }, ticks: { color: '#f59e0b' }, grid: { drawOnChartArea: false } }
+                        x: { ticks: { color: '#6b7974', font: { size: 9 } }, grid: { display: false } },
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Orders & Lines', color: '#aeb7b4' }, ticks: { color: '#aeb7b4' }, grid: { color: COLOR_BORDER } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Units / Picks Count', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
                     }
                 }
             });
@@ -329,18 +359,18 @@
                 data: {
                     labels: trendChart.map(c => c.date),
                     datasets: [
-                        { label: 'Orders Fulfilled', data: trendChart.map(c => c.orders), borderColor: '#3b82f6', tension: 0.15, yAxisID: 'y' },
-                        { label: 'Lines Processed', data: trendChart.map(c => c.lines), borderColor: '#8b5cf6', tension: 0.15, yAxisID: 'y' },
-                        { label: 'Total Picks (Units)', data: trendChart.map(c => c.picks), borderColor: '#f59e0b', tension: 0.15, yAxisID: 'y1' }
+                        { label: 'Orders Fulfilled', borderColor: COLOR_TERTIARY, data: trendChart.map(c => c.orders), tension: 0.15, yAxisID: 'y', borderWidth: 2 },
+                        { label: 'Lines Processed', borderColor: COLOR_SECONDARY, data: trendChart.map(c => c.lines), tension: 0.15, yAxisID: 'y', borderWidth: 2 },
+                        { label: 'Total Picks (Units)', borderColor: COLOR_PRIMARY, data: trendChart.map(c => c.picks), tension: 0.15, yAxisID: 'y1', borderWidth: 2.5 }
                     ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10 } } } },
+                    plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
-                        x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Orders & Lines Vol', color: '#94a3b8' }, ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Total Picks Demand', color: '#f59e0b' }, ticks: { color: '#f59e0b' }, grid: { drawOnChartArea: false } }
+                        x: { ticks: { color: '#aeb7b4' }, grid: { display: false } },
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Orders & Lines Vol', color: '#aeb7b4' }, ticks: { color: '#aeb7b4' }, grid: { color: COLOR_BORDER } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Total Picks Demand', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
                     }
                 }
             });
@@ -355,17 +385,17 @@
                 data: {
                     labels: averagesChart.map(a => a.date),
                     datasets: [
-                        { label: 'Daily Average LPH', data: averagesChart.map(a => a.avgLph), backgroundColor: '#14b8a6', yAxisID: 'y' },
-                        { label: 'Daily Average UPH', data: averagesChart.map(a => a.avgUph), backgroundColor: '#a855f7', yAxisID: 'y1' }
+                        { label: 'Daily Average LPH', data: averagesChart.map(a => a.avgLph), backgroundColor: COLOR_SECONDARY, yAxisID: 'y' },
+                        { label: 'Daily Average UPH', data: averagesChart.map(a => a.avgUph), backgroundColor: COLOR_PRIMARY, yAxisID: 'y1' }
                     ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 10 } } } },
+                    plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
-                        x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Avg Lines / Hr (LPH)', color: '#14b8a6' }, ticks: { color: '#14b8a6' }, grid: { color: '#1e293b' } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Avg Units / Hr (UPH)', color: '#a855f7' }, ticks: { color: '#a855f7' }, grid: { drawOnChartArea: false } }
+                        x: { ticks: { color: '#aeb7b4' }, grid: { display: false } },
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Avg Lines / Hr (LPH)', color: COLOR_SECONDARY }, ticks: { color: COLOR_SECONDARY }, grid: { color: COLOR_BORDER } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Avg Units / Hr (UPH)', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
                     }
                 }
             });
