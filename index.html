@@ -70,7 +70,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-xs">
                     <label for="single-date" class="font-bold text-[#7da6a6]">Target Day Focus:</label>
-                    <input type="date" id="single-date" onchange="refreshDashboardData()" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-3 py-1.5 text-white font-mono focus:ring-1 focus:ring-[#209d74] focus:outline-hidden">
+                    <input type="date" id="single-date" onchange="refreshDashboardData(false)" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-3 py-1.5 text-white font-mono focus:ring-1 focus:ring-[#209d74] focus:outline-hidden">
                 </div>
             </div>
 
@@ -186,7 +186,7 @@
                         <label for="macro-end" class="font-bold text-[#7da6a6]">To:</label>
                         <input type="date" id="macro-end" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-2 py-1 text-white font-mono focus:outline-hidden focus:ring-1 focus:ring-[#209d74]">
                     </div>
-                    <button onclick="refreshDashboardData()" class="bg-[#209d74] hover:bg-[#1b8562] text-white font-black px-4 py-1.5 rounded-lg cursor-pointer transition-colors shadow-xs uppercase tracking-wider text-[11px]">
+                    <button onclick="refreshDashboardData(false)" class="bg-[#209d74] hover:bg-[#1b8562] text-white font-black px-4 py-1.5 rounded-lg cursor-pointer transition-colors shadow-xs uppercase tracking-wider text-[11px]">
                         Apply Range Filter
                     </button>
                 </div>
@@ -254,7 +254,6 @@
     <script>
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
         let chartInstances = {};
-        let isInitialLoad = true;
 
         // Brand Theme Colors Config Constants Map
         const COLOR_PRIMARY = "#209D74";   // Teal Accord Accent
@@ -263,32 +262,36 @@
         const COLOR_BORDER = "#1d2c27";    // Strict Ledger Line Separation Grid
 
         document.addEventListener("DOMContentLoaded", () => {
-            initializeDateBounds();
-            refreshDashboardData();
+            initializeMacroBounds();
+            // Perform primary backend-driven data fetch execution
+            refreshDashboardData(true);
         });
 
-        function initializeDateBounds() {
-            const lsvTime = new Date().toLocaleString("en-US", { timeZone: "America/Kentucky/Louisville" });
-            const localDate = new Date(lsvTime);
-            const formattedToday = localDate.toISOString().split('T')[0];
+        function initializeMacroBounds() {
+            // Setup macro calendar ranges cleanly based on standard execution clocks
+            const localOffsetDate = new Date();
+            const formattedToday = localOffsetDate.toISOString().split('T')[0];
             
-            document.getElementById('single-date').value = formattedToday;
-
-            const pastDate = new Date(localDate);
-            pastDate.setDate(localDate.getDate() - 6);
-            document.getElementById('macro-start').value = pastDate.toISOString().split('T')[0];
+            const pastSevenDaysObj = new Date();
+            pastSevenDaysObj.setDate(localOffsetDate.getDate() - 6);
+            
+            document.getElementById('macro-start').value = pastSevenDaysObj.toISOString().split('T')[0];
             document.getElementById('macro-end').value = formattedToday;
         }
 
-        async function refreshDashboardData() {
-            const singleDate = document.getElementById('single-date').value;
+        async function refreshDashboardData(isFirstLoad = false) {
+            let singleDate = document.getElementById('single-date').value;
             const macroStart = document.getElementById('macro-start').value;
             const macroEnd = document.getElementById('macro-end').value;
 
-            document.getElementById('target-date-label').innerText = `(${singleDate})`;
+            // STRATEGY FIX: On initial page load, omit explicit singleDate parameters.
+            // This forces the backend engine to pull metrics matching its true, absolute timezone clock.
+            let queryUrl = `${API_BASE_URL}?start=${macroStart}&end=${macroEnd}`;
+            if (!isFirstLoad && singleDate) {
+                queryUrl += `&singleDate=${singleDate}`;
+            }
 
             try {
-                const queryUrl = `${API_BASE_URL}?singleDate=${singleDate}&start=${macroStart}&end=${macroEnd}`;
                 const response = await fetch(queryUrl);
                 const data = await response.json();
 
@@ -303,22 +306,22 @@
         function renderWorkspaceComponents(data) {
             document.getElementById('engine-sync-time').innerText = `Engine Sync Time: ${data.lastRefreshed || 'N/A'}`;
 
-            // EXTRACT DATE FROM ENGINE TIMESTAMP & RE-ALIGN ON INITIALIZATION RUN
-            if (data.lastRefreshed) {
-                const engineSyncDate = data.lastRefreshed.split(' ')[0];
+            // SYNC DATE SELECTION ELEMENTS WITH SERVER CONTEXT
+            if (data.singleDayWorkspace && data.singleDayWorkspace.date) {
+                const serverTargetDate = data.singleDayWorkspace.date;
                 
-                if (isInitialLoad) {
-                    document.getElementById('single-date').value = engineSyncDate;
-                    document.getElementById('target-date-label').innerText = `(${engineSyncDate})`;
-                    isInitialLoad = false;
-                }
+                // Keep selector and workspace indicators dynamically aligned
+                document.getElementById('single-date').value = serverTargetDate;
+                document.getElementById('target-date-label').innerText = `(${serverTargetDate})`;
 
-                // TOGGLE SECTION HEADER RESPONSIVELY BASED ON DATE MATCH
-                const currentSelectedDate = document.getElementById('single-date').value;
-                if (currentSelectedDate === engineSyncDate) {
-                    document.getElementById('totals-section-header').innerText = "Today Totals";
-                } else {
-                    document.getElementById('totals-section-header').innerText = "Day's Totals";
+                // DYNAMIC HEADER TEXT ASSIGNMENT EVALUATION
+                if (data.lastRefreshed) {
+                    const engineSyncDate = data.lastRefreshed.split(' ')[0];
+                    if (serverTargetDate === engineSyncDate) {
+                        document.getElementById('totals-section-header').innerText = "Today Totals";
+                    } else {
+                        document.getElementById('totals-section-header').innerText = "Day's Totals";
+                    }
                 }
             }
 
