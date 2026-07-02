@@ -114,30 +114,65 @@
                     <span id="totals-section-header" class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Today Totals</span>
                     <span id="target-date-label" class="text-[#7da6a6] text-xs font-mono">(------)</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Orders Fulfilled</p>
-                            <h3 id="m-orders" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-orders" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <h3 id="m-orders" class="text-2xl font-black text-white mt-1">0</h3>
+                            <p id="t-orders" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-[#090e0c] text-[#4fb0c2] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-box text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-box text-lg"></i></div>
                     </div>
-                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Lines Processed</p>
-                            <h3 id="m-lines" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-lines" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <h3 id="m-lines" class="text-2xl font-black text-white mt-1">0</h3>
+                            <p id="t-lines" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-[#090e0c] text-[#7da6a6] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-receipt text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#7da6a6] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-receipt text-lg"></i></div>
                     </div>
-                    <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Quantity Picked</p>
-                            <h3 id="m-picks" class="text-3xl font-black text-white mt-1">0</h3>
-                            <p id="t-picks" class="text-[11px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                            <h3 id="m-picks" class="text-2xl font-black text-white mt-1">0</h3>
+                            <p id="t-picks" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
                         </div>
-                        <div class="bg-[#090e0c] text-[#209d74] p-3 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-dolly text-xl"></i></div>
+                        <div class="bg-[#090e0c] text-[#209d74] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-dolly text-lg"></i></div>
+                    </div>
+
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Totes Inwarded</p>
+                            <h3 id="m-inward-totes" class="text-2xl font-black text-white mt-1">0</h3>
+                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Receipt entry load</span>
+                        </div>
+                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-arrow-to-bottom text-lg"></i></div>
+                    </div>
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Quantity Inwarded</p>
+                            <h3 id="m-inward-qty" class="text-2xl font-black text-white mt-1">0</h3>
+                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Inventory added vol</span>
+                        </div>
+                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-boxes-arrow-into-box text-lg"></i></div>
+                    </div>
+
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Totes Counted</p>
+                            <h3 id="m-cc-totes" class="text-2xl font-black text-white mt-1">0</h3>
+                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Audit sweep path</span>
+                        </div>
+                        <div class="bg-[#090e0c] text-[#7da6a6] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-calculator text-lg"></i></div>
+                    </div>
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Corrections Made</p>
+                            <h3 id="m-cc-corrections" class="text-2xl font-black text-[#ffc107] mt-1">0</h3>
+                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Discrepancy shifts</span>
+                        </div>
+                        <div class="bg-[#090e0c] text-[#ffc107] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-triangle-exclamation text-lg"></i></div>
                     </div>
                 </div>
             </div>
@@ -154,8 +189,8 @@
                 </div>
                 <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
-                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Throughput (LPH & UPH)</h4>
-                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Units and lines picked sequentially by execution duration inside hour blocks</p>
+                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Throughput (UPH)</h4>
+                        <p class="text-[11px] text-[#7da6a6] mt-0.5">Units picked sequentially by execution duration inside hour blocks</p>
                     </div>
                     <div class="relative h-72 w-full">
                         <canvas id="chart-hourly-rates"></canvas>
@@ -198,7 +233,8 @@
                     <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Filtered Range Aggregations</span>
                     <span class="text-[#5e6b66]">(Summed workspace performance metrics for selected window)</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
                         <div>
                             <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Total Orders</p>
@@ -219,6 +255,36 @@
                             <h3 id="macro-total-picks" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
                         </div>
                         <div class="text-[#209d74] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-hand-holding-box text-md"></i></div>
+                    </div>
+
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Totes Inwarded</p>
+                            <h3 id="macro-total-inward-totes" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                        </div>
+                        <div class="text-[#4fb0c2] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-arrow-down-to-square text-md"></i></div>
+                    </div>
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Qty Inwarded</p>
+                            <h3 id="macro-total-inward-qty" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                        </div>
+                        <div class="text-[#4fb0c2] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-pallet text-md"></i></div>
+                    </div>
+
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Totes Counted</p>
+                            <h3 id="macro-total-cc-totes" class="text-2xl font-black text-white tracking-tight mt-1">0</h3>
+                        </div>
+                        <div class="text-[#7da6a6] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-clipboard-check text-md"></i></div>
+                    </div>
+                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
+                        <div>
+                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Range Corrections</p>
+                            <h3 id="macro-total-cc-corrections" class="text-2xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                        </div>
+                        <div class="text-[#ffc107] bg-[#090e0c] p-2 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-wrench text-md"></i></div>
                     </div>
                 </div>
             </div>
@@ -323,30 +389,49 @@
             document.getElementById('p-lines').innerText = live.pendingLines.toLocaleString();
             document.getElementById('p-units').innerText = live.pendingUnits.toLocaleString();
 
-            const sd = data.singleDayWorkspace.totals || { orders: 0, lines: 0, picks: 0, hours: 0 };
+            const sd = data.singleDayWorkspace.totals || { orders: 0, lines: 0, picks: 0, hours: 0, inwardTotes: 0, inwardQty: 0, ccTotes: 0, ccCorrections: 0 };
             document.getElementById('m-orders').innerText = sd.orders.toLocaleString();
             document.getElementById('m-lines').innerText = sd.lines.toLocaleString();
             document.getElementById('m-picks').innerText = sd.picks.toLocaleString();
+            
+            // Populate upper inventory operations extensions
+            document.getElementById('m-inward-totes').innerText = (sd.inwardTotes || 0).toLocaleString();
+            document.getElementById('m-inward-qty').innerText = (sd.inwardQty || 0).toLocaleString();
+            document.getElementById('m-cc-totes').innerText = (sd.ccTotes || 0).toLocaleString();
+            document.getElementById('m-cc-corrections').innerText = (sd.ccCorrections || 0).toLocaleString();
 
             const singleHours = sd.hours || 0;
             document.getElementById('t-orders').innerText = `${singleHours > 0 ? (sd.orders / singleHours).toFixed(1) : "0.0"} / hr`;
             document.getElementById('t-lines').innerText = `${singleHours > 0 ? (sd.lines / singleHours).toFixed(1) : "0.0"} / hr`;
             document.getElementById('t-picks').innerText = `${singleHours > 0 ? (sd.picks / singleHours).toFixed(1) : "0.0"} / hr`;
 
+            // DYNAMIC CALCULATION AND POPULATION FOR MACRO WORKSPACE RANGE AGGREGATIONS
             const trendData = data.macroWorkspace.trendChart || [];
             let aggregateOrders = 0;
             let aggregateLines = 0;
             let aggregatePicks = 0;
+            let aggregateInwardTotes = 0;
+            let aggregateInwardQty = 0;
+            let aggregateCcTotes = 0;
+            let aggregateCcCorrections = 0;
 
             trendData.forEach(dayRecord => {
                 aggregateOrders += (dayRecord.orders || 0);
                 aggregateLines += (dayRecord.lines || 0);
                 aggregatePicks += (dayRecord.picks || 0);
+                aggregateInwardTotes += (dayRecord.inwardTotes || 0);
+                aggregateInwardQty += (dayRecord.inwardQty || 0);
+                aggregateCcTotes += (dayRecord.ccTotes || 0);
+                aggregateCcCorrections += (dayRecord.ccCorrections || 0);
             });
 
             document.getElementById('macro-total-orders').innerText = aggregateOrders.toLocaleString();
             document.getElementById('macro-total-lines').innerText = aggregateLines.toLocaleString();
             document.getElementById('macro-total-picks').innerText = aggregatePicks.toLocaleString();
+            document.getElementById('macro-total-inward-totes').innerText = aggregateInwardTotes.toLocaleString();
+            document.getElementById('macro-total-inward-qty').innerText = aggregateInwardQty.toLocaleString();
+            document.getElementById('macro-total-cc-totes').innerText = aggregateCcTotes.toLocaleString();
+            document.getElementById('macro-total-cc-corrections').innerText = aggregateCcCorrections.toLocaleString();
 
             buildChartHourlyRates(data.singleDayWorkspace.hourlyTimeline);
             buildChartHourlyCounts(data.singleDayWorkspace.hourlyTimeline);
@@ -369,8 +454,7 @@
                 data: {
                     labels: hourlyTimeline.map(t => t.hour),
                     datasets: [
-                        { label: 'Lines Per Hour (LPH)', data: hourlyTimeline.map(t => t.lph), backgroundColor: COLOR_SECONDARY, yAxisID: 'y' },
-                        { label: 'Units Per Hour (UPH)', data: hourlyTimeline.map(t => t.uph), backgroundColor: COLOR_PRIMARY, yAxisID: 'y1' }
+                        { label: 'Units Per Hour (UPH)', data: hourlyTimeline.map(t => t.uph), backgroundColor: COLOR_PRIMARY }
                     ]
                 },
                 options: {
@@ -378,8 +462,7 @@
                     plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
                         x: { ticks: { color: '#6b7974', font: { size: 9 } }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'LPH', color: COLOR_SECONDARY }, ticks: { color: COLOR_SECONDARY }, grid: { color: COLOR_BORDER } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'UPH', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
+                        y: { type: 'linear', title: { display: true, text: 'UPH', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { color: COLOR_BORDER } }
                     }
                 }
             });
@@ -446,8 +529,7 @@
                 data: {
                     labels: averagesChart.map(a => a.date),
                     datasets: [
-                        { label: 'Daily Average LPH', data: averagesChart.map(a => a.avgLph), backgroundColor: COLOR_SECONDARY, yAxisID: 'y' },
-                        { label: 'Daily Average UPH', data: averagesChart.map(a => a.avgUph), backgroundColor: COLOR_PRIMARY, yAxisID: 'y1' }
+                        { label: 'Daily Average UPH', data: averagesChart.map(a => a.avgUph), backgroundColor: COLOR_PRIMARY }
                     ]
                 },
                 options: {
@@ -455,8 +537,7 @@
                     plugins: { legend: { labels: { color: '#aeb7b4', font: { size: 10, weight: 'bold' } } } },
                     scales: {
                         x: { ticks: { color: '#aeb7b4' }, grid: { display: false } },
-                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Avg Lines / Hr (LPH)', color: COLOR_SECONDARY }, ticks: { color: COLOR_SECONDARY }, grid: { color: COLOR_BORDER } },
-                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Avg Units / Hr (UPH)', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { drawOnChartArea: false } }
+                        y: { type: 'linear', title: { display: true, text: 'Avg Units / Hr (UPH)', color: COLOR_PRIMARY }, ticks: { color: COLOR_PRIMARY }, grid: { color: COLOR_BORDER } }
                     }
                 }
             });
