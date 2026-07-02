@@ -111,8 +111,8 @@
             <div class="space-y-2 pt-2">
                 <div class="flex items-center gap-2 text-xs text-[#7da6a6] pl-1">
                     <i class="fa-solid fa-database text-[#209d74]"></i>
-                    <span class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Today Totals</span>
-                    <span id="target-date-label" class="text-[#7da6a6] text-xs font-mono">(--)</span>
+                    <span id="totals-section-header" class="font-black text-[#e7ebea] uppercase tracking-wider text-[10px]">Today Totals</span>
+                    <span id="target-date-label" class="text-[#7da6a6] text-xs font-mono">(------)</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
@@ -145,7 +145,7 @@
             <div class="flex flex-col gap-6 pt-2">
                 <div class="bg-[#111a17] p-5 rounded-xl border border-[#1d2c27] space-y-4 shadow-xs">
                     <div>
-                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Metrics (UPH Today)</h4>
+                        <h4 class="text-xs font-black text-white tracking-wider uppercase">Carte+ Hourly Throughput (LPH & UPH)</h4>
                         <p class="text-[11px] text-[#7da6a6] mt-0.5">Units and lines picked sequentially by execution duration inside hour blocks</p>
                     </div>
                     <div class="relative h-72 w-full">
@@ -254,6 +254,7 @@
     <script>
         const API_BASE_URL = "https://script.google.com/macros/s/AKfycbxeJVpQ7gbu284VAln1Uq14SmyR5Lorga9wIOEOtzGPMs_7fPERmCuH7Wyuhn2M77Pd/exec";
         let chartInstances = {};
+        let isInitialLoad = true;
 
         // Brand Theme Colors Config Constants Map
         const COLOR_PRIMARY = "#209D74";   // Teal Accord Accent
@@ -301,6 +302,25 @@
 
         function renderWorkspaceComponents(data) {
             document.getElementById('engine-sync-time').innerText = `Engine Sync Time: ${data.lastRefreshed || 'N/A'}`;
+
+            // EXTRACT DATE FROM ENGINE TIMESTAMP & RE-ALIGN ON INITIALIZATION RUN
+            if (data.lastRefreshed) {
+                const engineSyncDate = data.lastRefreshed.split(' ')[0];
+                
+                if (isInitialLoad) {
+                    document.getElementById('single-date').value = engineSyncDate;
+                    document.getElementById('target-date-label').innerText = `(${engineSyncDate})`;
+                    isInitialLoad = false;
+                }
+
+                // TOGGLE SECTION HEADER RESPONSIVELY BASED ON DATE MATCH
+                const currentSelectedDate = document.getElementById('single-date').value;
+                if (currentSelectedDate === engineSyncDate) {
+                    document.getElementById('totals-section-header').innerText = "Today Totals";
+                } else {
+                    document.getElementById('totals-section-header').innerText = "Day's Totals";
+                }
+            }
 
             const live = data.livePending || { pendingOrders: 0, pendingLines: 0, pendingUnits: 0 };
             document.getElementById('p-orders').innerText = live.pendingOrders.toLocaleString();
