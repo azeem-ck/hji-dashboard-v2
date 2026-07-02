@@ -115,65 +115,84 @@
                     <span id="target-date-label" class="text-[#7da6a6] text-xs font-mono">(------)</span>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Orders Fulfilled</p>
-                            <h3 id="m-orders" class="text-2xl font-black text-white mt-1">0</h3>
-                            <p id="t-orders" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                <div class="flex flex-col gap-4 xl:flex-row xl:items-stretch">
+                    
+                    <div class="flex-1 bg-[#111a17] border border-[#1d2c27] p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#4fb0c2] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-box-open"></i> Fulfillment Performance [cite: 1]
                         </div>
-                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-box text-lg"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Lines Processed</p>
-                            <h3 id="m-lines" class="text-2xl font-black text-white mt-1">0</h3>
-                            <p id="t-lines" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Orders Fulfilled</p>
+                                    <h3 id="m-orders" class="text-xl font-black text-white mt-0.5">0</h3>
+                                    <p id="t-orders" class="text-[9px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-1.5 py-0.5 rounded-sm inline-block">0.0/hr</p>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-80"><i class="fa-solid fa-box text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Lines Processed</p>
+                                    <h3 id="m-lines" class="text-xl font-black text-white mt-0.5">0</h3>
+                                    <p id="t-lines" class="text-[9px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-1.5 py-0.5 rounded-sm inline-block">0.0/hr</p>
+                                </div>
+                                <div class="text-[#7da6a6] opacity-80"><i class="fa-solid fa-receipt text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Quantity Picked</p>
+                                    <h3 id="m-picks" class="text-xl font-black text-white mt-0.5">0</h3>
+                                    <p id="t-picks" class="text-[9px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-1.5 py-0.5 rounded-sm inline-block">0.0/hr</p>
+                                </div>
+                                <div class="text-[#209d74] opacity-80"><i class="fa-solid fa-dolly text-md"></i></div>
+                            </div>
                         </div>
-                        <div class="bg-[#090e0c] text-[#7da6a6] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-receipt text-lg"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Quantity Picked</p>
-                            <h3 id="m-picks" class="text-2xl font-black text-white mt-1">0</h3>
-                            <p id="t-picks" class="text-[10px] text-[#209d74] font-mono font-bold mt-1 bg-[#090e0c] px-2 py-0.5 rounded-md inline-block">0.0 / hr</p>
-                        </div>
-                        <div class="bg-[#090e0c] text-[#209d74] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-dolly text-lg"></i></div>
-                    </div>
-
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Totes Inwarded</p>
-                            <h3 id="m-inward-totes" class="text-2xl font-black text-white mt-1">0</h3>
-                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Receipt entry load</span>
-                        </div>
-                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-arrow-to-bottom text-lg"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Quantity Inwarded</p>
-                            <h3 id="m-inward-qty" class="text-2xl font-black text-white mt-1">0</h3>
-                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Inventory added vol</span>
-                        </div>
-                        <div class="bg-[#090e0c] text-[#4fb0c2] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-boxes-arrow-into-box text-lg"></i></div>
                     </div>
 
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Totes Counted</p>
-                            <h3 id="m-cc-totes" class="text-2xl font-black text-white mt-1">0</h3>
-                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Audit sweep path</span>
+                    <div class="w-full xl:w-80 bg-[#111a17] border border-[#209d74]/30 p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#209d74] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-arrow-down-to-square"></i> Inbound Receiving [cite: 1]
                         </div>
-                        <div class="bg-[#090e0c] text-[#7da6a6] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-calculator text-lg"></i></div>
-                    </div>
-                    <div class="bg-[#111a17] p-4 rounded-xl border border-[#1d2c27] flex items-center justify-between shadow-xs">
-                        <div>
-                            <p class="text-[10px] font-black text-[#7da6a6] uppercase tracking-widest">Corrections Made</p>
-                            <h3 id="m-cc-corrections" class="text-2xl font-black text-[#ffc107] mt-1">0</h3>
-                            <span class="text-[10px] text-[#7da6a6] font-mono block mt-1">Discrepancy shifts</span>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Totes Inward</p>
+                                    <h3 id="m-inward-totes" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-75"><i class="fa-solid fa-arrow-to-bottom text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Qty Inwarded</p>
+                                    <h3 id="m-inward-qty" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#4fb0c2] opacity-75"><i class="fa-solid fa-boxes-arrow-into-box text-md"></i></div>
+                            </div>
                         </div>
-                        <div class="bg-[#090e0c] text-[#ffc107] p-2.5 rounded-lg border border-[#1d2c27]"><i class="fa-solid fa-triangle-exclamation text-lg"></i></div>
                     </div>
+
+                    <div class="w-full xl:w-80 bg-[#111a17] border border-[#ffc107]/20 p-4 rounded-xl space-y-3 shadow-md">
+                        <div class="text-[10px] uppercase font-black tracking-widest text-[#ffc107] border-b border-[#1d2c27] pb-1.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-calculator"></i> Inventory Audits [cite: 1]
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Totes Counted</p>
+                                    <h3 id="m-cc-totes" class="text-xl font-black text-white mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#7da6a6] opacity-75"><i class="fa-solid fa-calculator text-md"></i></div>
+                            </div>
+                            <div class="bg-[#090e0c]/50 p-3 rounded-lg border border-[#1d2c27]/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-[9px] font-bold text-[#7da6a6] uppercase">Corrections</p>
+                                    <h3 id="m-cc-corrections" class="text-xl font-black text-[#ffc107] mt-0.5">0</h3>
+                                </div>
+                                <div class="text-[#ffc107] opacity-75"><i class="fa-solid fa-triangle-exclamation text-md"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -394,7 +413,7 @@
             document.getElementById('m-lines').innerText = sd.lines.toLocaleString();
             document.getElementById('m-picks').innerText = sd.picks.toLocaleString();
             
-            // Populate upper inventory operations extensions
+            // Populate single day inventory operation targets
             document.getElementById('m-inward-totes').innerText = (sd.inwardTotes || 0).toLocaleString();
             document.getElementById('m-inward-qty').innerText = (sd.inwardQty || 0).toLocaleString();
             document.getElementById('m-cc-totes').innerText = (sd.ccTotes || 0).toLocaleString();
@@ -468,6 +487,7 @@
             });
         }
 
+        // DUAL Y-AXIS CHART FOR SCALING EFFICIENCY
         function buildChartHourlyCounts(hourlyTimeline) {
             clearChartInstance('hourlyCounts');
             const ctx = document.getElementById('chart-hourly-counts').getContext('2d');
