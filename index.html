@@ -13,6 +13,25 @@
         ::-webkit-scrollbar-track { background: #090e0c; }
         ::-webkit-scrollbar-thumb { background: #1d2c27; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #209d74; }
+
+        /* Forces browser native calendar picker icons to render bright white in dark mode */
+        input[type="date"] {
+            color-scheme: dark;
+        }
+
+        /* 🌟 FIX: Force the invisible calendar icon to be highly visible and crisp */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            filter: invert(1) brightness(1.8); /* Pulls the icon completely out of the shadows */
+            opacity: 1 !important;
+            padding: 2px;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        /* Subtle zoom effect when hovering over the calendar selector icon button */
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            transform: scale(1.15);
+        }
     </style>
 </head>
 <body class="bg-[#090e0c] text-[#e7ebea] font-sans antialiased min-h-screen">
@@ -70,7 +89,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-xs">
                     <label for="single-date" class="font-bold text-[#7da6a6]">Target Day Focus:</label>
-                    <input type="date" id="single-date" onchange="refreshDashboardData(false)" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-3 py-1.5 text-white font-mono focus:ring-1 focus:ring-[#209d74] focus:outline-hidden">
+                    <input type="date" id="single-date" onchange="refreshDashboardData(false)" onclick="this.showPicker()" class="bg-[#162420] border border-[#354e47] rounded-lg px-3 py-1.5 text-white font-mono font-bold tracking-wide focus:ring-1 focus:ring-[#209d74] focus:border-[#209d74] focus:outline-hidden transition-all shadow-inner">
                 </div>
             </div>
 
@@ -252,11 +271,11 @@
                 <div class="flex flex-wrap items-center gap-3 text-xs">
                     <div class="flex items-center gap-2">
                         <label for="macro-start" class="font-bold text-[#7da6a6]">From:</label>
-                        <input type="date" id="macro-start" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-2 py-1 text-white font-mono focus:outline-hidden focus:ring-1 focus:ring-[#209d74]">
+                        <input type="date" id="macro-start" onclick="this.showPicker()" class="bg-[#162420] border border-[#354e47] rounded-lg px-2 py-1 text-white font-mono font-bold tracking-wide focus:outline-hidden focus:ring-1 focus:ring-[#209d74] focus:border-[#209d74] transition-all shadow-inner">
                     </div>
                     <div class="flex items-center gap-2">
                         <label for="macro-end" class="font-bold text-[#7da6a6]">To:</label>
-                        <input type="date" id="macro-end" class="bg-[#090e0c] border border-[#1d2c27] rounded-lg px-2 py-1 text-white font-mono focus:outline-hidden focus:ring-1 focus:ring-[#209d74]">
+                        <input type="date" id="macro-end" onclick="this.showPicker()" class="bg-[#162420] border border-[#354e47] rounded-lg px-2 py-1 text-white font-mono font-bold tracking-wide focus:outline-hidden focus:ring-1 focus:ring-[#209d74] focus:border-[#209d74] transition-all shadow-inner">
                     </div>
                     <button onclick="refreshDashboardData(false)" class="bg-[#209d74] hover:bg-[#1b8562] text-white font-black px-4 py-1.5 rounded-lg cursor-pointer transition-colors shadow-xs uppercase tracking-wider text-[11px]">
                         Apply Range Filter
